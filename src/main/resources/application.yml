@@ -1,0 +1,3 @@
+hashi-vault:
+  dbid: ${dbid}
+  dbpid: ${dbpid}

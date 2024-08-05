@@ -1,0 +1,72 @@
+spring.application.name: vault-pki-cert
+spring.cloud.vault:
+  host: 127.0.0.1
+  port: 8400
+  scheme: https
+  kv:
+    enabled: true
+    backend: secret
+    default-context: vault-pki-cert
+  authentication: CERT
+  ssl:
+    key-store: file:/var/snap/vault/common/vault-cert.pkcs12
+    key-store-password: vault-cert
+    cert-auth-path: cert
+
+#server:
+#  port: 8888
+#  ssl:
+#    enabled: true
+#    key-store: classpath:config-server.jks
+#    key-store-password: config-server
+#    key-alias: config-server
+#    key-store-type: JKS
+#spring:
+#  main:
+#    allow-bean-definition-overriding: true
+#  application:
+#    name: vault-pki-cert
+#  #settings for spring vault library to create connection with vault
+#  cloud:
+#    vault:
+#      port: 8400
+#      host: 127.0.0.1
+#      scheme: https
+#      authentication: CERT
+#      backend: secret
+#      default-context: vault-pki-cert
+#      ssl:
+#        key-store: file:/var/snap/vault/common/vault-cert.pkcs12
+#        key-store-password: vault-cert
+#        cert-auth-path: cert
+#      kv-version: 1
+#    config:
+#      server:
+#        vault:
+#          port: 8400
+#          host: 127.0.0.1
+#          scheme: https
+#          authentication: CERT
+#          backend: secret
+#          default-context: vault-pki-cert
+#          ssl:
+#            key-store: file:/var/snap/vault/common/vault-cert.pkcs12
+#            key-store-password: vault-cert
+#            cert-auth-path: cert
+#          kv-version: 1
+
+#spring:
+#  application:
+#    name: vault-pki-cert
+#  cloud:
+#    vault:
+#      port: 8200
+#      host: 127.0.0.1
+#      scheme: https
+#      authentication: CERT
+#      backend: secret
+#      ssl:
+#        key-store: classpath:vault-cert.pkcs12
+#        key-store-password: vault-cert
+#        cert-auth-path: cert
+#      kv-version: 1
